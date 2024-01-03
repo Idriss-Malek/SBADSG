@@ -72,7 +72,7 @@ if __name__ == "__main__":
     if algorithm == 'AnoEdgeG':
         for dataset in datasets:
             plt.clf()
-            folder = f'C:/Users/idris/Desktop/homework 4a/projet_dsp/data/{dataset}/'
+            folder = f'../data/{dataset}/'
             X = pd.read_csv(folder + 'Data.csv', header=None, names = ['source','destination','time'])
             y = pd.read_csv(folder+'Label.csv',header=None)
             y = y[y.columns[0]].tolist()
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     else:
         for dataset in datasets:
             plt.clf()
-            folder = f'C:/Users/idris/Desktop/homework 4a/projet_dsp/data/{dataset}/'
+            folder = f'../data/{dataset}/'
             X = pd.read_csv(folder + 'Data.csv', header=None, names = ['source','destination','time'])
             X['window'] = X['time'].apply(lambda x : x // time_window)
             y = pd.read_csv(folder+'Label.csv',header=None)
