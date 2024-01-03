@@ -1,11 +1,8 @@
-from river import stream
-import numpy as np
 from hcms import HCMS
 from utils import EdgeSubmatrixDensity
 
 class AnoEdgeG():
     def __init__(self, Nr, Nb, alpha):
-
         """
         Initializer.
 
@@ -18,7 +15,6 @@ class AnoEdgeG():
         self.alpha = alpha
     
     def learn_one(self,edge):
-
         """
         Updates the H-CMS structure with the new edge.
 
@@ -31,11 +27,11 @@ class AnoEdgeG():
         self.hcms.update(u,v,w)
     
     def score_one(self,u,v):
-
         """
         Anomaly score of the edge with the AnoEdgeG algorithm.
 
-        :param edge: Edge in the form of (u,v,w,t).
+        :param u: Source.
+        :param v: Destination.
         :return: The anomaly score of the edge.
         """
         densities = []

@@ -1,7 +1,6 @@
 import numpy as np
 
 def density(M, Sx, Tx):
-
     """
     Density of a submatrix.
 
@@ -13,7 +12,6 @@ def density(M, Sx, Tx):
     return sum([sum([M[s][t] for t in Tx]) for s in Sx])/(np.sqrt(len(Sx)*len(Tx))+10e-6)
 
 def R(M,hu,Tx):
-
     """
     Row-sum.
 
@@ -25,7 +23,6 @@ def R(M,hu,Tx):
     return sum([M[hu][hv] for hv in Tx])
 
 def C(M,Sx,hv):
-
     """
     Column-sum.
 
@@ -36,37 +33,7 @@ def C(M,Sx,hv):
     """
     return sum([M[hu][hv] for hu in Sx])
 
-def L(M,hu,hv,Sx,Tx):
-
-    """
-    Likelihood of an index with respect to a submatrix.
-
-    :param M: Matrix.
-    :param hu: Row index.
-    :param Tx: Column index.
-    :param Sx: List of rows.
-    :param Tx: List of columns.
-    :return: Likelihood.
-    """
-    sum = C(M,Sx,hv)+R(M,hu,Tx)
-    if hv in Tx and hu in Sx:
-        return (sum - M[hu][hv])/((len(Sx)+len(Tx)-1)+10e-6)
-    return sum/(len(Sx)+len(Tx)+10e-6)
-
-def E(M,Sx,Tx):
-
-    """
-    Sum of a submatrix.
-
-    :param M: Matrix.
-    :param Sx: List of rows.
-    :param Tx: List of columns.
-    :return: Sum of the submatrix.
-    """
-    return sum([sum([M[s][t] for t in Tx]) for s in Sx])
-
 def EdgeSubmatrixDensity(M,hu,hv):
-        
     """
     Computes the Edge Submatrix density of an edge.
 

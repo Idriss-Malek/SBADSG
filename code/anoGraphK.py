@@ -7,7 +7,6 @@ from utils import EdgeSubmatrixDensity
 
 class AnoGraphK():
     def __init__(self, Nr, Nb, K):
-
         """
         Initializer.
 
@@ -19,7 +18,6 @@ class AnoGraphK():
         self.K = K
     
     def learn_one(self,graph):
-
         """
         Updates the H-CMS structure for the new graph.
 
@@ -30,7 +28,6 @@ class AnoGraphK():
             self.hcms.update(u,v,w)
     
     def score_one(self):
-
         """
         Computes the anomaly score of the last graph learned
         using the AnoGraph-K algorithm.

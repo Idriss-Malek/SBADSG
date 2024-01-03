@@ -10,6 +10,17 @@ from anoGraphK import AnoGraphK
 from anoEdgeG import AnoEdgeG
 
 def print_results(algorithm, dataset, scores, times, y, time_window = 0, edge_threshold= 0):
+    """
+    Plots the scores obtained and write the scores and execution time in a file.
+
+    :param algorithm: Algorithm that was used.
+    :param dataset_name: Name of the dataset.
+    :param scores: Scores obtained.
+    :param times: Time.
+    :param y: Labels.
+    :param time_window: Time window for edges to constitue a graph.
+    :param edge_threshold: Number of anomalous edge for a graph to be considered anomalous.
+    """ 
     if algorithm == 'AnoEdgeG':
         SUFFIX = f'{algorithm}_{dataset}'
     elif algorithm == 'AnoGraph' or algorithm == 'AnoGraphK':

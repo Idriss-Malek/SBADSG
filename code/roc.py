@@ -4,6 +4,12 @@ from sklearn import metrics
 import matplotlib.pyplot as plt
 
 def plot_anograph(algorithm, dataset_name):
+    """
+    Plots the ROC for AnoGraph and AnoGraphK.
+
+    :param algorithm: Algorithm that was used.
+    :param dataset_name: Name of the dataset.
+    """    
     output_file = f'../results/ROC_{algorithm}_{dataset_name}.png'
     param = [(15,25),(30,50),(60,50),(60,100)]
     plt.figure(figsize=(8, 8))
@@ -24,6 +30,11 @@ def plot_anograph(algorithm, dataset_name):
     plt.savefig(output_file)
 
 def plot_anoedge(algorithm):
+    """
+    Plots the ROC for AnoEdgeG.
+
+    :param algorithm: Algorithm that was used.
+    """ 
     output_file = f'../results/ROC_{algorithm}.png'
     datasets = ['DARPA','ISCX','DDOS2019','IDS2018']
     plt.figure(figsize=(8, 8))
@@ -44,6 +55,9 @@ def plot_anoedge(algorithm):
     plt.savefig(output_file)
 
 def main():
+    """
+    Main function.
+    """ 
     if len(sys.argv) < 2:
         print(f"Expected at least two arguments but got {len(sys.argv)}")
         sys.exit(1)

@@ -5,7 +5,6 @@ from utils import density,R,C
 
 class AnoGraph():
     def __init__(self, Nr, Nb):
-
         """
         Initializer.
 
@@ -15,7 +14,6 @@ class AnoGraph():
         self.hcms = HCMS(Nr,Nb)
     
     def learn_one(self,graph):
-
         """
         Updates the H-CMS structure for the new graph.
 
@@ -26,7 +24,6 @@ class AnoGraph():
             self.hcms.update(u,v,w)
     
     def score_one(self):
-
         """
         Computes the anomaly score of the last graph learned
         using the AnoGraph algorithm.
