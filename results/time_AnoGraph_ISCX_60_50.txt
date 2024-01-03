@@ -1,0 +1,2 @@
+Time taken for each graph : 0.0290 
+Time taken in total : 79.7227
