@@ -18,4 +18,4 @@ Use the roc.py file by running the following commands.
 - To obtain Roc for all 4 pairs of parameters on one dataset with AnoGraph : `python roc.py 'AnoGraph' 'dataset'`    
 - To obtain Roc for all 4 pairs of parameters on one dataset with AnoGraphK : `python roc.py 'AnoGraphK' 'dataset'`    
 ## Results
-All the results have been uploaded in the results folder of the repo : (./results)
+All the results have been uploaded in the results folder of the repo : [Results](./results)
