@@ -9,7 +9,7 @@ from anoGraph import AnoGraph
 from anoGraphK import AnoGraphK
 from anoEdgeG import AnoEdgeG
 
-result_folder = 'demo'
+result_folder = 'results'
 
 def print_results(algorithm, dataset, scores, times, y, time_window = 0, edge_threshold= 0):
     """
