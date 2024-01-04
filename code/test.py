@@ -9,6 +9,8 @@ from anoGraph import AnoGraph
 from anoGraphK import AnoGraphK
 from anoEdgeG import AnoEdgeG
 
+result_folder = 'demo'
+
 def print_results(algorithm, dataset, scores, times, y, time_window = 0, edge_threshold= 0):
     """
     Plots the scores obtained and write the scores and execution time in a file.
@@ -25,7 +27,7 @@ def print_results(algorithm, dataset, scores, times, y, time_window = 0, edge_th
         SUFFIX = f'{algorithm}_{dataset}'
     elif algorithm == 'AnoGraph' or algorithm == 'AnoGraphK':
         SUFFIX = f'{algorithm}_{dataset}_{time_window}_{edge_threshold}'
-    with open(f'../results/scores_{SUFFIX}.txt', 'w') as file:
+    with open(f'../{result_folder}/scores_{SUFFIX}.txt', 'w+') as file:
             for score, label in zip(scores, y):
                 file.write(f"{score:.4f},{label}\n")
     blue_time = [t for t, y in zip(times, y) if y == 0]
@@ -42,9 +44,9 @@ def print_results(algorithm, dataset, scores, times, y, time_window = 0, edge_th
     plt.ylabel('Scores')
     plt.title(f'{algorithm} on {dataset}')
     plt.legend()
-    plt.savefig(f'../results/plot_{SUFFIX}.png')
+    plt.savefig(f'../{result_folder}/plot_{SUFFIX}.png')
     print('Figure saved')
-    with open(f'../results/time_{SUFFIX}.txt', 'w+') as file:
+    with open(f'../{result_folder}/time_{SUFFIX}.txt', 'w+') as file:
         file.write(f'Time taken for each graph : {((end-start) / len(scores)):.4f} \n')
         file.write(f'Time taken in total : {(end-start):.4f}')
 
