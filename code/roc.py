@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn import metrics
 import matplotlib.pyplot as plt
 
-result_folder = 'demo'
+result_folder = 'results'
 
 def plot_anograph(algorithm, dataset_name):
     """
