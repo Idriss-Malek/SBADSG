@@ -86,6 +86,7 @@ if __name__ == "__main__":
             scores = []
             times = []
             for index, row in X.iterrows():
+                print(index)
                 u,v,t = tuple(row)
                 w = 1
                 model.learn_one((u,v,w,t))
